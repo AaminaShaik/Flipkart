@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.css" integrity="sha512-LKG0Zi6duJ5mwncLtQVchN0iF8fWmcxApuX9pqGq7ITgwQDWR9EqZFsrV9TXfE9pPRa1J6GVnsBl7gKxAyllaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    #container{
+        display: flex;
+        justify-content: center;
+    }
+    #calcyContainer{
+        height: 500px;
+        width:300px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: rgb(192, 228, 234);
+
+    }
+    #output{
+        height: 90px;
+        width: 90%;
+        border: 2px solid black;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 30px;
+    }
+    button{
+      margin: 7px;
+      margin-bottom: 5px;
+      width: 60px;
+    height:40px;
+    border-radius : 30px;
+    font-size: 18px;
+    }
+    button :hover{
+       background-color: antiquewhite;
+    
+    }
+   
+    #count{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        width: 50px;
+        margin-top: 50px;
+    }
+</style>
+
+
+
+</head>
+<body>
+    <div id="container">
+         <div id="calcyContainer">  
+            <input type="text" id="output">
+            <div id="count">
+                <button onclick="clearValue()">C</button>
+                <button onclick="backSpace()"><img src=" https://cdn.icon-icons.com/icons2/2551/PNG/512/backspace_icon_152920.png"height="24px" width="24px"></button>
+
+                <button onclick="addvalue('/')">%</button>
+                <button onclick="addvalue('/')">/</button>
+                <button onclick="addvalue(7)">7</button>
+                <button onclick="addvalue(8)">8</button>
+                <button onclick="addvalue(9)">9</button>
+                <button onclick="addvalue('*')">*</button>
+                <button onclick="addvalue(4)">4</button>
+                <button onclick="addvalue(5)">5</button>
+                <button onclick="addvalue(6)">6</button>
+                <button onclick="addvalue('-')">-</button>
+                <button onclick="addvalue(1)">1</button>
+                <button onclick="addvalue(2)">2</button>
+                <button onclick="addvalue(3)">3</button>
+                <button onclick="addvalue('+')">+</button>
+                <button onclick="addvalue(0)">0</button>
+                <button onclick="addvalue('00')">00</button>
+                <button onclick="addvalue('.')">.</button>
+                <button onclick="result()">=</button>
+    
+        </div>
+         </div>
+    </div>
+    <script>
+        output.value=0
+        function addvalue(value){
+            output.value+=value
+        }
+        function clearvalue(){
+            output.value=''
+        }
+        function escapeValue(){
+            output.value=output.value.slice(0,-1)
+        }
+        function result(){
+            output.value=eval(output.value)
+        }
+    </script>
+</body>
+</html>
+
+
